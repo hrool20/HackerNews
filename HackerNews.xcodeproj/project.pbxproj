@@ -24,6 +24,16 @@
 		D12E6E9A25A66526005605A1 /* PopupHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6E9925A66526005605A1 /* PopupHandlerProtocol.swift */; };
 		D12E6E9F25A666ED005605A1 /* Constants+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6E9E25A666ED005605A1 /* Constants+Localizable.swift */; };
 		D12E6EA025A66AB0005605A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EA225A66AB0005605A1 /* Localizable.strings */; };
+		D12E6EB025A66D6F005605A1 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EA625A66D6F005605A1 /* OpenSans-Italic.ttf */; };
+		D12E6EB125A66D6F005605A1 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EA725A66D6F005605A1 /* OpenSans-SemiBold.ttf */; };
+		D12E6EB225A66D6F005605A1 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EA825A66D6F005605A1 /* OpenSans-Light.ttf */; };
+		D12E6EB325A66D6F005605A1 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EA925A66D6F005605A1 /* OpenSans-ExtraBoldItalic.ttf */; };
+		D12E6EB425A66D6F005605A1 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EAA25A66D6F005605A1 /* OpenSans-Bold.ttf */; };
+		D12E6EB525A66D6F005605A1 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EAB25A66D6F005605A1 /* OpenSans-SemiBoldItalic.ttf */; };
+		D12E6EB625A66D6F005605A1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EAC25A66D6F005605A1 /* OpenSans-Regular.ttf */; };
+		D12E6EB725A66D6F005605A1 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EAD25A66D6F005605A1 /* OpenSans-BoldItalic.ttf */; };
+		D12E6EB825A66D6F005605A1 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EAE25A66D6F005605A1 /* OpenSans-LightItalic.ttf */; };
+		D12E6EB925A66D6F005605A1 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EAF25A66D6F005605A1 /* OpenSans-ExtraBold.ttf */; };
 		D16F6D1225A635FF00342863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1125A635FF00342863 /* AppDelegate.swift */; };
 		D16F6D1C25A635FF00342863 /* HackerNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1A25A635FF00342863 /* HackerNews.xcdatamodeld */; };
 		D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1D25A6360600342863 /* Assets.xcassets */; };
@@ -73,6 +83,16 @@
 		D12E6E9E25A666ED005605A1 /* Constants+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Localizable.swift"; sourceTree = "<group>"; };
 		D12E6EA125A66AB0005605A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D12E6EA325A66AD6005605A1 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D12E6EA625A66D6F005605A1 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		D12E6EA725A66D6F005605A1 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		D12E6EA825A66D6F005605A1 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		D12E6EA925A66D6F005605A1 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		D12E6EAA25A66D6F005605A1 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		D12E6EAB25A66D6F005605A1 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		D12E6EAC25A66D6F005605A1 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		D12E6EAD25A66D6F005605A1 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		D12E6EAE25A66D6F005605A1 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		D12E6EAF25A66D6F005605A1 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		D16F6D0E25A635FF00342863 /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16F6D1125A635FF00342863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16F6D1B25A635FF00342863 /* HackerNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackerNews.xcdatamodel; sourceTree = "<group>"; };
@@ -132,6 +152,7 @@
 		D12E6E7925A64674005605A1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D12E6EA525A66C94005605A1 /* Fonts */,
 				D12E6E9B25A666AA005605A1 /* Internationalization */,
 				D16F6D1125A635FF00342863 /* AppDelegate.swift */,
 				D16F6D1D25A6360600342863 /* Assets.xcassets */,
@@ -199,6 +220,7 @@
 		D12E6E8E25A6587E005605A1 /* ShowOptions */ = {
 			isa = PBXGroup;
 			children = (
+				D12E6EA425A66C76005605A1 /* Cells */,
 				D12E6E9025A65976005605A1 /* HitOptionsTableViewController.swift */,
 				D12E6E9125A65976005605A1 /* HitOptionsTableViewController.xib */,
 			);
@@ -221,6 +243,30 @@
 				D12E6E9E25A666ED005605A1 /* Constants+Localizable.swift */,
 			);
 			path = Internationalization;
+			sourceTree = "<group>";
+		};
+		D12E6EA425A66C76005605A1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D12E6EA525A66C94005605A1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D12E6EAA25A66D6F005605A1 /* OpenSans-Bold.ttf */,
+				D12E6EAD25A66D6F005605A1 /* OpenSans-BoldItalic.ttf */,
+				D12E6EAF25A66D6F005605A1 /* OpenSans-ExtraBold.ttf */,
+				D12E6EA925A66D6F005605A1 /* OpenSans-ExtraBoldItalic.ttf */,
+				D12E6EA625A66D6F005605A1 /* OpenSans-Italic.ttf */,
+				D12E6EA825A66D6F005605A1 /* OpenSans-Light.ttf */,
+				D12E6EAE25A66D6F005605A1 /* OpenSans-LightItalic.ttf */,
+				D12E6EAC25A66D6F005605A1 /* OpenSans-Regular.ttf */,
+				D12E6EA725A66D6F005605A1 /* OpenSans-SemiBold.ttf */,
+				D12E6EAB25A66D6F005605A1 /* OpenSans-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D16F6D0525A635FF00342863 = {
@@ -395,12 +441,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D12E6EB525A66D6F005605A1 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				D12E6EB425A66D6F005605A1 /* OpenSans-Bold.ttf in Resources */,
 				D16F6D2125A6360600342863 /* LaunchScreen.storyboard in Resources */,
 				D12E6EA025A66AB0005605A1 /* Localizable.strings in Resources */,
 				D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */,
 				D12E6E9325A65976005605A1 /* HitOptionsTableViewController.xib in Resources */,
+				D12E6EB125A66D6F005605A1 /* OpenSans-SemiBold.ttf in Resources */,
 				D12E6E8525A64884005605A1 /* SplashViewController.xib in Resources */,
+				D12E6EB225A66D6F005605A1 /* OpenSans-Light.ttf in Resources */,
+				D12E6EB325A66D6F005605A1 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				D12E6EB725A66D6F005605A1 /* OpenSans-BoldItalic.ttf in Resources */,
+				D12E6EB925A66D6F005605A1 /* OpenSans-ExtraBold.ttf in Resources */,
 				D12E6E9825A659DD005605A1 /* MainWebviewViewController.xib in Resources */,
+				D12E6EB625A66D6F005605A1 /* OpenSans-Regular.ttf in Resources */,
+				D12E6EB025A66D6F005605A1 /* OpenSans-Italic.ttf in Resources */,
+				D12E6EB825A66D6F005605A1 /* OpenSans-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

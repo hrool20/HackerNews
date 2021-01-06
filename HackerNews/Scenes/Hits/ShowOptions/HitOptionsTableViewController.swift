@@ -9,7 +9,9 @@
 import UIKit
 
 class HitOptionsTableViewController: UITableViewController {
-        
+    
+    private var hits: [String]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
