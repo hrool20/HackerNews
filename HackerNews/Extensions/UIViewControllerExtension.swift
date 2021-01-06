@@ -8,8 +8,19 @@
 
 import UIKit
 
-extension UIViewController {
+extension UIViewController: PopupHandlerProtocol {
     static func get(with bundle: Bundle? = nil) -> Self {
         return Self(nibName: NIBName, bundle: bundle)
+    }
+    
+    // MARK: PopupHandlerProtocol
+    
+    func showMessage(title: String?, message: String, closure: @escaping (() -> Void)) {
+        let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: Constants.Localizable.OK, style: .default) { (_) in
+            closure()
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 }

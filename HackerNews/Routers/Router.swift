@@ -18,4 +18,11 @@ final class Router {
         let viewController = SplashViewController.get()
         return viewController
     }
+    
+    func getMainWebview(title: String?, url: String) -> UIViewController {
+        let viewController = MainWebviewViewController.get()
+        viewController.navigationTitle = title
+        viewController.url = url
+        return viewController
+    }
 }

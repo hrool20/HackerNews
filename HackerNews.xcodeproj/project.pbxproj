@@ -17,6 +17,13 @@
 		D12E6E8825A64998005605A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6E8725A64998005605A1 /* Constants.swift */; };
 		D12E6E8A25A64B3E005605A1 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6E8925A64B3E005605A1 /* UIViewControllerExtension.swift */; };
 		D12E6E8C25A64C76005605A1 /* UIResponderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6E8B25A64C76005605A1 /* UIResponderExtension.swift */; };
+		D12E6E9225A65976005605A1 /* HitOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6E9025A65976005605A1 /* HitOptionsTableViewController.swift */; };
+		D12E6E9325A65976005605A1 /* HitOptionsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12E6E9125A65976005605A1 /* HitOptionsTableViewController.xib */; };
+		D12E6E9725A659DD005605A1 /* MainWebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6E9525A659DD005605A1 /* MainWebviewViewController.swift */; };
+		D12E6E9825A659DD005605A1 /* MainWebviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12E6E9625A659DD005605A1 /* MainWebviewViewController.xib */; };
+		D12E6E9A25A66526005605A1 /* PopupHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6E9925A66526005605A1 /* PopupHandlerProtocol.swift */; };
+		D12E6E9F25A666ED005605A1 /* Constants+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6E9E25A666ED005605A1 /* Constants+Localizable.swift */; };
+		D12E6EA025A66AB0005605A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EA225A66AB0005605A1 /* Localizable.strings */; };
 		D16F6D1225A635FF00342863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1125A635FF00342863 /* AppDelegate.swift */; };
 		D16F6D1C25A635FF00342863 /* HackerNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1A25A635FF00342863 /* HackerNews.xcdatamodeld */; };
 		D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1D25A6360600342863 /* Assets.xcassets */; };
@@ -58,6 +65,14 @@
 		D12E6E8725A64998005605A1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D12E6E8925A64B3E005605A1 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		D12E6E8B25A64C76005605A1 /* UIResponderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponderExtension.swift; sourceTree = "<group>"; };
+		D12E6E9025A65976005605A1 /* HitOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitOptionsTableViewController.swift; sourceTree = "<group>"; };
+		D12E6E9125A65976005605A1 /* HitOptionsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HitOptionsTableViewController.xib; sourceTree = "<group>"; };
+		D12E6E9525A659DD005605A1 /* MainWebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWebviewViewController.swift; sourceTree = "<group>"; };
+		D12E6E9625A659DD005605A1 /* MainWebviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWebviewViewController.xib; sourceTree = "<group>"; };
+		D12E6E9925A66526005605A1 /* PopupHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHandlerProtocol.swift; sourceTree = "<group>"; };
+		D12E6E9E25A666ED005605A1 /* Constants+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Localizable.swift"; sourceTree = "<group>"; };
+		D12E6EA125A66AB0005605A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D12E6EA325A66AD6005605A1 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D16F6D0E25A635FF00342863 /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16F6D1125A635FF00342863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16F6D1B25A635FF00342863 /* HackerNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackerNews.xcdatamodel; sourceTree = "<group>"; };
@@ -117,6 +132,7 @@
 		D12E6E7925A64674005605A1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D12E6E9B25A666AA005605A1 /* Internationalization */,
 				D16F6D1125A635FF00342863 /* AppDelegate.swift */,
 				D16F6D1D25A6360600342863 /* Assets.xcassets */,
 				D16F6D1A25A635FF00342863 /* HackerNews.xcdatamodeld */,
@@ -139,6 +155,8 @@
 		D12E6E7D25A64815005605A1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D12E6E9425A65997005605A1 /* MainWebview */,
+				D12E6E8D25A6586C005605A1 /* Hits */,
 				D12E6E8125A64856005605A1 /* Splash */,
 			);
 			path = Scenes;
@@ -165,8 +183,44 @@
 			isa = PBXGroup;
 			children = (
 				D12E6E8725A64998005605A1 /* Constants.swift */,
+				D12E6E9925A66526005605A1 /* PopupHandlerProtocol.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D12E6E8D25A6586C005605A1 /* Hits */ = {
+			isa = PBXGroup;
+			children = (
+				D12E6E8E25A6587E005605A1 /* ShowOptions */,
+			);
+			path = Hits;
+			sourceTree = "<group>";
+		};
+		D12E6E8E25A6587E005605A1 /* ShowOptions */ = {
+			isa = PBXGroup;
+			children = (
+				D12E6E9025A65976005605A1 /* HitOptionsTableViewController.swift */,
+				D12E6E9125A65976005605A1 /* HitOptionsTableViewController.xib */,
+			);
+			path = ShowOptions;
+			sourceTree = "<group>";
+		};
+		D12E6E9425A65997005605A1 /* MainWebview */ = {
+			isa = PBXGroup;
+			children = (
+				D12E6E9525A659DD005605A1 /* MainWebviewViewController.swift */,
+				D12E6E9625A659DD005605A1 /* MainWebviewViewController.xib */,
+			);
+			path = MainWebview;
+			sourceTree = "<group>";
+		};
+		D12E6E9B25A666AA005605A1 /* Internationalization */ = {
+			isa = PBXGroup;
+			children = (
+				D12E6EA225A66AB0005605A1 /* Localizable.strings */,
+				D12E6E9E25A666ED005605A1 /* Constants+Localizable.swift */,
+			);
+			path = Internationalization;
 			sourceTree = "<group>";
 		};
 		D16F6D0525A635FF00342863 = {
@@ -322,6 +376,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = D16F6D0525A635FF00342863;
 			productRefGroup = D16F6D0F25A635FF00342863 /* Products */;
@@ -341,8 +396,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D16F6D2125A6360600342863 /* LaunchScreen.storyboard in Resources */,
+				D12E6EA025A66AB0005605A1 /* Localizable.strings in Resources */,
 				D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */,
+				D12E6E9325A65976005605A1 /* HitOptionsTableViewController.xib in Resources */,
 				D12E6E8525A64884005605A1 /* SplashViewController.xib in Resources */,
+				D12E6E9825A659DD005605A1 /* MainWebviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,11 +528,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D12E6E9A25A66526005605A1 /* PopupHandlerProtocol.swift in Sources */,
 				D16F6D1225A635FF00342863 /* AppDelegate.swift in Sources */,
+				D12E6E9725A659DD005605A1 /* MainWebviewViewController.swift in Sources */,
 				D12E6E8025A64837005605A1 /* Router.swift in Sources */,
 				D12E6E8425A64884005605A1 /* SplashViewController.swift in Sources */,
+				D12E6E9225A65976005605A1 /* HitOptionsTableViewController.swift in Sources */,
 				D12E6E8A25A64B3E005605A1 /* UIViewControllerExtension.swift in Sources */,
 				D12E6E8825A64998005605A1 /* Constants.swift in Sources */,
+				D12E6E9F25A666ED005605A1 /* Constants+Localizable.swift in Sources */,
 				D16F6D1C25A635FF00342863 /* HackerNews.xcdatamodeld in Sources */,
 				D12E6E8C25A64C76005605A1 /* UIResponderExtension.swift in Sources */,
 				D12E6E7C25A6473A005605A1 /* UIColorExtension.swift in Sources */,
@@ -513,6 +575,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D12E6EA225A66AB0005605A1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D12E6EA125A66AB0005605A1 /* en */,
+				D12E6EA325A66AD6005605A1 /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D16F6D1F25A6360600342863 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -528,6 +599,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -588,6 +660,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
