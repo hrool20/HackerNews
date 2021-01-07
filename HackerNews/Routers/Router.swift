@@ -10,12 +10,16 @@ import UIKit
 
 final class Router {
     static let shared: Router = Router()
+    // Repositories
+    private let generalRepository: GeneralRepositoryProtocol
     
     init() {
+        generalRepository = GeneralRepository()
     }
     
     func getHitOptions() -> UIViewController {
         let viewController = HitOptionsTableViewController.get()
+        viewController.hitsPresenter = HitOptionsPresenter(generalRepository: generalRepository, view: viewController)
         return viewController
     }
     
@@ -28,6 +32,7 @@ final class Router {
     
     func getSplashScene() -> UIViewController {
         let viewController = SplashViewController.get()
+        viewController.splashPresenter = SplashPresenter(view: viewController)
         return viewController
     }
 }

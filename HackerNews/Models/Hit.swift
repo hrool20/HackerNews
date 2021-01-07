@@ -35,7 +35,7 @@ class Hit {
         self.storyTitle = storyTitle
         self.storyUrl = storyUrl
         self._createdAt = createdAt
-        self.createdAt = DateFormatterHandler.shared.date(from: createdAt)
+        self.createdAt = DateFormatterHandler.shared.date(from: createdAt, withFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ")
         self.comment = comment
         self.tags = tags
     }

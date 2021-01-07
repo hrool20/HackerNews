@@ -10,7 +10,7 @@ import Foundation
 
 extension Constants {
     struct Localizable {
-        static let APP_NAME = NSLocalizedString("Laus", comment: "")
+        static let APP_NAME = NSLocalizedString("Hacker News", comment: "")
         static let DEFAULT_ERROR_MESSAGE = NSLocalizedString("There was a problem, please try later", comment: "")
         static let OK = NSLocalizedString("Ok", comment: "")
     }

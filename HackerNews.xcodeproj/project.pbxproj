@@ -43,6 +43,12 @@
 		D12E6EC925A676E2005605A1 /* Constants+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EC825A676E2005605A1 /* Constants+Endpoints.swift */; };
 		D12E6ECC25A67E4C005605A1 /* Hit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6ECB25A67E4C005605A1 /* Hit.swift */; };
 		D12E6ECE25A684E8005605A1 /* DateFormatterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6ECD25A684E8005605A1 /* DateFormatterHandler.swift */; };
+		D12E6ED025A692AA005605A1 /* HitOptionsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6ECF25A692AA005605A1 /* HitOptionsPresenterProtocol.swift */; };
+		D12E6ED225A692E3005605A1 /* HitOptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6ED125A692E3005605A1 /* HitOptionsPresenter.swift */; };
+		D12E6ED625A69339005605A1 /* HitOptionsTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6ED525A69339005605A1 /* HitOptionsTableViewControllerProtocol.swift */; };
+		D12E6ED825A6992D005605A1 /* SplashPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6ED725A6992D005605A1 /* SplashPresenterProtocol.swift */; };
+		D12E6EDA25A69938005605A1 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6ED925A69938005605A1 /* SplashPresenter.swift */; };
+		D12E6EDC25A6994A005605A1 /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EDB25A6994A005605A1 /* SplashViewControllerProtocol.swift */; };
 		D16F6D1225A635FF00342863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1125A635FF00342863 /* AppDelegate.swift */; };
 		D16F6D1C25A635FF00342863 /* HackerNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1A25A635FF00342863 /* HackerNews.xcdatamodeld */; };
 		D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1D25A6360600342863 /* Assets.xcassets */; };
@@ -111,6 +117,12 @@
 		D12E6EC825A676E2005605A1 /* Constants+Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Endpoints.swift"; sourceTree = "<group>"; };
 		D12E6ECB25A67E4C005605A1 /* Hit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hit.swift; sourceTree = "<group>"; };
 		D12E6ECD25A684E8005605A1 /* DateFormatterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterHandler.swift; sourceTree = "<group>"; };
+		D12E6ECF25A692AA005605A1 /* HitOptionsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitOptionsPresenterProtocol.swift; sourceTree = "<group>"; };
+		D12E6ED125A692E3005605A1 /* HitOptionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitOptionsPresenter.swift; sourceTree = "<group>"; };
+		D12E6ED525A69339005605A1 /* HitOptionsTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitOptionsTableViewControllerProtocol.swift; sourceTree = "<group>"; };
+		D12E6ED725A6992D005605A1 /* SplashPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterProtocol.swift; sourceTree = "<group>"; };
+		D12E6ED925A69938005605A1 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		D12E6EDB25A6994A005605A1 /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
 		D16F6D0E25A635FF00342863 /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16F6D1125A635FF00342863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16F6D1B25A635FF00342863 /* HackerNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackerNews.xcdatamodel; sourceTree = "<group>"; };
@@ -213,8 +225,11 @@
 		D12E6E8125A64856005605A1 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				D12E6ED925A69938005605A1 /* SplashPresenter.swift */,
+				D12E6ED725A6992D005605A1 /* SplashPresenterProtocol.swift */,
 				D12E6E8225A64884005605A1 /* SplashViewController.swift */,
 				D12E6E8325A64884005605A1 /* SplashViewController.xib */,
+				D12E6EDB25A6994A005605A1 /* SplashViewControllerProtocol.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -241,8 +256,11 @@
 			isa = PBXGroup;
 			children = (
 				D12E6EA425A66C76005605A1 /* Cells */,
+				D12E6ED125A692E3005605A1 /* HitOptionsPresenter.swift */,
+				D12E6ECF25A692AA005605A1 /* HitOptionsPresenterProtocol.swift */,
 				D12E6E9025A65976005605A1 /* HitOptionsTableViewController.swift */,
 				D12E6E9125A65976005605A1 /* HitOptionsTableViewController.xib */,
+				D12E6ED525A69339005605A1 /* HitOptionsTableViewControllerProtocol.swift */,
 			);
 			path = ShowOptions;
 			sourceTree = "<group>";
@@ -644,16 +662,22 @@
 				D12E6ECC25A67E4C005605A1 /* Hit.swift in Sources */,
 				D12E6EBF25A671AA005605A1 /* UIViewExtension.swift in Sources */,
 				D12E6E8425A64884005605A1 /* SplashViewController.swift in Sources */,
+				D12E6ED625A69339005605A1 /* HitOptionsTableViewControllerProtocol.swift in Sources */,
 				D12E6EBC25A66F58005605A1 /* HitOptionTableViewCell.swift in Sources */,
 				D12E6ECE25A684E8005605A1 /* DateFormatterHandler.swift in Sources */,
+				D12E6EDA25A69938005605A1 /* SplashPresenter.swift in Sources */,
 				D12E6E9225A65976005605A1 /* HitOptionsTableViewController.swift in Sources */,
 				D12E6E8A25A64B3E005605A1 /* UIViewControllerExtension.swift in Sources */,
+				D12E6ED825A6992D005605A1 /* SplashPresenterProtocol.swift in Sources */,
+				D12E6ED025A692AA005605A1 /* HitOptionsPresenterProtocol.swift in Sources */,
 				D12E6E8825A64998005605A1 /* Constants.swift in Sources */,
 				D12E6E9F25A666ED005605A1 /* Constants+Localizable.swift in Sources */,
 				D12E6EC925A676E2005605A1 /* Constants+Endpoints.swift in Sources */,
+				D12E6EDC25A6994A005605A1 /* SplashViewControllerProtocol.swift in Sources */,
 				D12E6EC725A675FD005605A1 /* GeneralRepositoryProtocol.swift in Sources */,
 				D16F6D1C25A635FF00342863 /* HackerNews.xcdatamodeld in Sources */,
 				D12E6E8C25A64C76005605A1 /* UIResponderExtension.swift in Sources */,
+				D12E6ED225A692E3005605A1 /* HitOptionsPresenter.swift in Sources */,
 				D12E6EC525A67459005605A1 /* ResponseHelper.swift in Sources */,
 				D12E6E7C25A6473A005605A1 /* UIColorExtension.swift in Sources */,
 			);

@@ -11,6 +11,7 @@ import UIKit
 class HitOptionsTableViewController: UITableViewController {
     
     private var hits: [Hit]?
+    var hitsPresenter: HitOptionsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +20,7 @@ class HitOptionsTableViewController: UITableViewController {
         
         tableView.register(HitOptionTableViewCell.getNIB(), forCellReuseIdentifier: HitOptionTableViewCell.reuseIdentifier)
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        hitsPresenter.loadHits(orderedBy: .ascendant)
     }
     
     /*
@@ -45,11 +45,11 @@ class HitOptionsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HitOptionTableViewCell.reuseIdentifier, for: indexPath) as! HitOptionTableViewCell
-        guard let hit = hits?[indexPath.row] else {
+        guard let hit = hits?[indexPath.row], let createdAt = hit.createdAt else {
             return cell
         }
         let title = hit.title ?? hit.storyTitle ?? ""
-        let description = "\(hit.author) - \(hit.createdAt.debugDescription)"
+        let description = "\(hit.author) - \(DateFormatterHandler.shared.string(from: createdAt, withFormat: "dd/MM/yyyy hh:mm:ss"))"
         cell.option = (title, description)
         return cell
     }
@@ -66,4 +66,10 @@ class HitOptionsTableViewController: UITableViewController {
         return CGFloat.leastNonzeroMagnitude
     }
 
+}
+extension HitOptionsTableViewController: HitOptionsTableViewControllerProtocol {
+    func updateHits(_ hits: [Hit]) {
+        self.hits = hits
+        tableView.reloadData()
+    }
 }
