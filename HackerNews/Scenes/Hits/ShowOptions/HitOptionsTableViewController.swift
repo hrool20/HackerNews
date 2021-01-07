@@ -11,16 +11,37 @@ import UIKit
 class HitOptionsTableViewController: UITableViewController {
     
     private var hits: [Hit]?
+    private var order: HitOrder!
     var hitsPresenter: HitOptionsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Hints"
+        order = .ascendant
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(didRefreshTableView), for: .valueChanged)
+        tableView.refreshControl = refreshControl
         
         tableView.register(HitOptionTableViewCell.getNIB(), forCellReuseIdentifier: HitOptionTableViewCell.reuseIdentifier)
 
-        hitsPresenter.loadHits(orderedBy: .ascendant)
+        hitsPresenter.loadHits(orderedBy: order)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    @objc private func didRefreshTableView() {
+        hitsPresenter.loadHits(orderedBy: order)
     }
     
     /*
@@ -54,6 +75,13 @@ class HitOptionsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let hit = hits?[indexPath.row], let url = hit.url ?? hit.storyUrl else { return }
+        let vc = Router.shared.getMainWebview(title: nil, url: url)
+        show(vc, sender: nil)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -65,11 +93,26 @@ class HitOptionsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat.leastNonzeroMagnitude
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            _ = hits?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        default:
+            break
+        }
+    }
 
 }
 extension HitOptionsTableViewController: HitOptionsTableViewControllerProtocol {
     func updateHits(_ hits: [Hit]) {
         self.hits = hits
+        tableView.refreshControl?.endRefreshing()
         tableView.reloadData()
     }
 }
