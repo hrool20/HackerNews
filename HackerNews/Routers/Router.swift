@@ -14,8 +14,8 @@ final class Router {
     init() {
     }
     
-    func getSplashScene() -> UIViewController {
-        let viewController = SplashViewController.get()
+    func getHitOptions() -> UIViewController {
+        let viewController = HitOptionsTableViewController.get()
         return viewController
     }
     
@@ -23,6 +23,11 @@ final class Router {
         let viewController = MainWebviewViewController.get()
         viewController.navigationTitle = title
         viewController.url = url
+        return viewController
+    }
+    
+    func getSplashScene() -> UIViewController {
+        let viewController = SplashViewController.get()
         return viewController
     }
 }
