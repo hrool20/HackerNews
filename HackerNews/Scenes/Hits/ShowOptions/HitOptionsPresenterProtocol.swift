@@ -10,5 +10,7 @@ import UIKit
 
 protocol HitOptionsPresenterProtocol {
     func loadHits(orderedBy order: HitOrder)
+    func removeDeletedHits()
     func saveDeletedHit(hit: Hit)
+    func updateNavigationBar()
 }

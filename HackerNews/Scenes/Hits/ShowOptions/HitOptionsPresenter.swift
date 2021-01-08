@@ -27,10 +27,17 @@ final class HitOptionsPresenter: HitOptionsPresenterProtocol {
                 guard !deletedHits.contains(hit.parentId) else { return nil }
                 return hit
             }
+            self.updateNavigationBar()
             self.view.updateHits(newHits)
         }) { [weak self] (error) in
             self?.view.showMessage(message: error.localizedDescription)
         }
+    }
+    
+    func removeDeletedHits() {
+        userDefaultsHandler.remove(from: Constants.Keys.DELETED_HIT_IDS)
+        userDefaultsHandler.remove(from: Constants.Keys.IS_SOME_HIT_DELETED)
+        updateNavigationBar()
     }
     
     func saveDeletedHit(hit: Hit) {
@@ -42,5 +49,12 @@ final class HitOptionsPresenter: HitOptionsPresenterProtocol {
         }
         deletedHits.append(hit.parentId)
         userDefaultsHandler.save(value: deletedHits, to: Constants.Keys.DELETED_HIT_IDS)
+        userDefaultsHandler.save(value: true, to: Constants.Keys.IS_SOME_HIT_DELETED)
+        updateNavigationBar()
+    }
+    
+    func updateNavigationBar() {
+        let shouldShowRightItems = userDefaultsHandler.bool(from: Constants.Keys.IS_SOME_HIT_DELETED)
+        view.updateNavigationBar(shouldShowRightItems)
     }
 }

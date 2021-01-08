@@ -53,6 +53,7 @@
 		D12E6EE025A7CA84005605A1 /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EDF25A7CA84005605A1 /* UserDefaultsHandler.swift */; };
 		D12E6EE325A7EE84005605A1 /* PrincipalNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EE225A7EE84005605A1 /* PrincipalNavigationController.swift */; };
 		D12E6EE525A7F1D9005605A1 /* UIColor+PrincipalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EE425A7F1D9005605A1 /* UIColor+PrincipalColors.swift */; };
+		D12E6EEC25A8CEEC005605A1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EEB25A8CEEC005605A1 /* UIImageExtension.swift */; };
 		D16F6D1225A635FF00342863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1125A635FF00342863 /* AppDelegate.swift */; };
 		D16F6D1C25A635FF00342863 /* HackerNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1A25A635FF00342863 /* HackerNews.xcdatamodeld */; };
 		D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1D25A6360600342863 /* Assets.xcassets */; };
@@ -131,6 +132,7 @@
 		D12E6EDF25A7CA84005605A1 /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		D12E6EE225A7EE84005605A1 /* PrincipalNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalNavigationController.swift; sourceTree = "<group>"; };
 		D12E6EE425A7F1D9005605A1 /* UIColor+PrincipalColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+PrincipalColors.swift"; sourceTree = "<group>"; };
+		D12E6EEB25A8CEEC005605A1 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		D16F6D0E25A635FF00342863 /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16F6D1125A635FF00342863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16F6D1B25A635FF00342863 /* HackerNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackerNews.xcdatamodel; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				D12E6EE425A7F1D9005605A1 /* UIColor+PrincipalColors.swift */,
 				D12E6E7B25A6473A005605A1 /* UIColorExtension.swift */,
+				D12E6EEB25A8CEEC005605A1 /* UIImageExtension.swift */,
 				D12E6E8B25A64C76005605A1 /* UIResponderExtension.swift */,
 				D12E6E8925A64B3E005605A1 /* UIViewControllerExtension.swift */,
 				D12E6EBE25A671AA005605A1 /* UIViewExtension.swift */,
@@ -704,6 +707,7 @@
 				D12E6ED225A692E3005605A1 /* HitOptionsPresenter.swift in Sources */,
 				D12E6EC525A67459005605A1 /* ResponseHelper.swift in Sources */,
 				D12E6E7C25A6473A005605A1 /* UIColorExtension.swift in Sources */,
+				D12E6EEC25A8CEEC005605A1 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,20 +24,22 @@ class HitOptionsTableViewController: UITableViewController {
         tableView.refreshControl = refreshControl
         
         tableView.register(HitOptionTableViewCell.getNIB(), forCellReuseIdentifier: HitOptionTableViewCell.reuseIdentifier)
-
+        
         hitsPresenter.loadHits(orderedBy: order)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.setNavigationBarHidden(false, animated: true)
+    @objc private func showOptions() {
+        let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: nil, preferredStyle: .actionSheet)
+        let restartAction = UIAlertAction(title: Constants.Localizable.RESTORE_NEWS, style: .default) { [weak self] (_) in
+            self?.showQuestion(title: "", message: Constants.Localizable.RESTORE_NEWS_QUESTION, closure: { (isSuccessful) in
+                guard isSuccessful else { return }
+                self?.hitsPresenter.removeDeletedHits()
+            })
+        }
+        let cancelAction = UIAlertAction(title: Constants.Localizable.CANCEL, style: .cancel, handler: nil)
+        alertController.addAction(restartAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     @objc private func didRefreshTableView() {
@@ -111,6 +113,13 @@ class HitOptionsTableViewController: UITableViewController {
 
 }
 extension HitOptionsTableViewController: HitOptionsTableViewControllerProtocol {
+    func updateNavigationBar(_ shouldShowRightItems: Bool) {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "ic_app_logo.png").resizeImage(targetSize: CGSize(width: 35.0, height: 35.0)))
+        navigationItem.titleView = imageView
+        let barButton = UIBarButtonItem(barButtonSystemItem: .undo, target: self, action: #selector(showOptions))
+        navigationItem.rightBarButtonItems = (shouldShowRightItems) ? [barButton] : []
+    }
+    
     func updateHits(_ hits: [Hit]) {
         self.hits = hits
         tableView.refreshControl?.endRefreshing()

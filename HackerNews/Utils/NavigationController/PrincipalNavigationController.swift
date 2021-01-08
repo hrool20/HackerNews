@@ -16,7 +16,6 @@ class PrincipalNavigationController: UINavigationController {
         navigationBar.tintColor = .accentColor ?? .white
         navigationBar.barTintColor = .backgroundColor ?? .white
         navigationBar.barStyle = .default
-        navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = false
     }
     
