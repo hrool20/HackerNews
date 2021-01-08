@@ -10,4 +10,5 @@ import UIKit
 
 protocol HitOptionsPresenterProtocol {
     func loadHits(orderedBy order: HitOrder)
+    func saveDeletedHit(hit: Hit)
 }

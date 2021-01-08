@@ -10,7 +10,6 @@ import Foundation
 import SwiftyJSON
 
 class Hit {
-    var id: String
     var parentId: String
     var objectId: String
     var title: String?
@@ -25,7 +24,6 @@ class Hit {
     private var _createdAt: String
     
     init(parentId: String, objectId: String, title: String?, url: String?, author: String, storyId: String?, storyTitle: String?, storyUrl: String?, createdAt: String, comment: String, tags: [String]) {
-        self.id = UUID().uuidString
         self.parentId = parentId
         self.objectId = objectId
         self.title = title

@@ -10,16 +10,19 @@ import UIKit
 
 final class Router {
     static let shared: Router = Router()
+    // Handlers
+    private let userDefaultsHandler: UserDefaultsHandlerProtocol
     // Repositories
     private let generalRepository: GeneralRepositoryProtocol
     
     init() {
+        userDefaultsHandler = UserDefaultsHandler()
         generalRepository = GeneralRepository()
     }
     
     func getHitOptions() -> UIViewController {
         let viewController = HitOptionsTableViewController.get()
-        viewController.hitsPresenter = HitOptionsPresenter(generalRepository: generalRepository, view: viewController)
+        viewController.hitsPresenter = HitOptionsPresenter(userDefaultsHandler: userDefaultsHandler, generalRepository: generalRepository, view: viewController)
         return viewController
     }
     

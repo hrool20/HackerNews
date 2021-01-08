@@ -101,7 +101,8 @@ class HitOptionsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            _ = hits?.remove(at: indexPath.row)
+            guard let hit = hits?.remove(at: indexPath.row) else { return }
+            hitsPresenter.saveDeletedHit(hit: hit)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         default:
             break
