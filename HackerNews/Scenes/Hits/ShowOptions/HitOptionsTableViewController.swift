@@ -12,6 +12,7 @@ class HitOptionsTableViewController: UITableViewController {
     
     private var hits: [Hit]?
     private var order: HitOrder!
+    private var lottieRefreshControl: LottieRefreshControl!
     var hitsPresenter: HitOptionsPresenterProtocol!
     
     override func viewDidLoad() {
@@ -19,13 +20,17 @@ class HitOptionsTableViewController: UITableViewController {
 
         order = .descendant
         
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(didRefreshTableView), for: .valueChanged)
-        tableView.refreshControl = refreshControl
+        lottieRefreshControl = LottieRefreshControl()
+        lottieRefreshControl.addTarget(self, action: #selector(didRefreshTableView), for: .valueChanged)
+        tableView.refreshControl = lottieRefreshControl
         
         tableView.register(HitOptionTableViewCell.getNIB(), forCellReuseIdentifier: HitOptionTableViewCell.reuseIdentifier)
         
-        hitsPresenter.loadHits(orderedBy: order)
+        hitsPresenter.loadHits(orderedBy: order, isAnUpdate: false)
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        lottieRefreshControl.updateProgress(with: scrollView.contentOffset.y)
     }
     
     @objc private func showOptions() {
@@ -35,7 +40,7 @@ class HitOptionsTableViewController: UITableViewController {
                 guard let self = self else { return }
                 guard isSuccessful else { return }
                 self.hitsPresenter.removeDeletedHits()
-                self.hitsPresenter.loadHits(orderedBy: self.order)
+                self.hitsPresenter.loadHits(orderedBy: self.order, isAnUpdate: false)
             })
         }
         let cancelAction = UIAlertAction(title: Constants.Localizable.CANCEL, style: .cancel, handler: nil)
@@ -45,7 +50,7 @@ class HitOptionsTableViewController: UITableViewController {
     }
     
     @objc private func didRefreshTableView() {
-        hitsPresenter.loadHits(orderedBy: order)
+        hitsPresenter.loadHits(orderedBy: order, isAnUpdate: true)
     }
     
     /*

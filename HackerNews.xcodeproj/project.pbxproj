@@ -58,6 +58,7 @@
 		D12E6EF125A8DAF1005605A1 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EF025A8DAF1005605A1 /* LoaderView.swift */; };
 		D12E6EF325A8DFC0005605A1 /* LoaderHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EF225A8DFC0005605A1 /* LoaderHandlerProtocol.swift */; };
 		D12E6EF725A9066B005605A1 /* BlueLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EF625A9066B005605A1 /* BlueLoader.json */; };
+		D12E6EFA25A91B2A005605A1 /* LottieRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EF925A91B2A005605A1 /* LottieRefreshControl.swift */; };
 		D16F6D1225A635FF00342863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1125A635FF00342863 /* AppDelegate.swift */; };
 		D16F6D1C25A635FF00342863 /* HackerNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1A25A635FF00342863 /* HackerNews.xcdatamodeld */; };
 		D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1D25A6360600342863 /* Assets.xcassets */; };
@@ -141,6 +142,7 @@
 		D12E6EF025A8DAF1005605A1 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		D12E6EF225A8DFC0005605A1 /* LoaderHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderHandlerProtocol.swift; sourceTree = "<group>"; };
 		D12E6EF625A9066B005605A1 /* BlueLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BlueLoader.json; sourceTree = "<group>"; };
+		D12E6EF925A91B2A005605A1 /* LottieRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieRefreshControl.swift; sourceTree = "<group>"; };
 		D16F6D0E25A635FF00342863 /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16F6D1125A635FF00342863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16F6D1B25A635FF00342863 /* HackerNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackerNews.xcdatamodel; sourceTree = "<group>"; };
@@ -257,7 +259,8 @@
 		D12E6E8625A64982005605A1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				D12E6EE125A7EDE8005605A1 /* NavigationController */,
+				D12E6EE125A7EDE8005605A1 /* NavigationControllers */,
+				D12E6EF825A91AF9005605A1 /* RefreshControls */,
 				D12E6EED25A8DAB8005605A1 /* Views */,
 				D12E6EF625A9066B005605A1 /* BlueLoader.json */,
 				D12E6E8725A64998005605A1 /* Constants.swift */,
@@ -362,12 +365,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D12E6EE125A7EDE8005605A1 /* NavigationController */ = {
+		D12E6EE125A7EDE8005605A1 /* NavigationControllers */ = {
 			isa = PBXGroup;
 			children = (
 				D12E6EE225A7EE84005605A1 /* PrincipalNavigationController.swift */,
 			);
-			path = NavigationController;
+			path = NavigationControllers;
 			sourceTree = "<group>";
 		};
 		D12E6EED25A8DAB8005605A1 /* Views */ = {
@@ -377,6 +380,14 @@
 				D12E6EEE25A8DAD6005605A1 /* LoaderView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D12E6EF825A91AF9005605A1 /* RefreshControls */ = {
+			isa = PBXGroup;
+			children = (
+				D12E6EF925A91B2A005605A1 /* LottieRefreshControl.swift */,
+			);
+			path = RefreshControls;
 			sourceTree = "<group>";
 		};
 		D16F6D0525A635FF00342863 = {
@@ -709,6 +720,7 @@
 				D12E6E8425A64884005605A1 /* SplashViewController.swift in Sources */,
 				D12E6EE325A7EE84005605A1 /* PrincipalNavigationController.swift in Sources */,
 				D12E6EF325A8DFC0005605A1 /* LoaderHandlerProtocol.swift in Sources */,
+				D12E6EFA25A91B2A005605A1 /* LottieRefreshControl.swift in Sources */,
 				D12E6ED625A69339005605A1 /* HitOptionsTableViewControllerProtocol.swift in Sources */,
 				D12E6EBC25A66F58005605A1 /* HitOptionTableViewCell.swift in Sources */,
 				D12E6ECE25A684E8005605A1 /* DateFormatterHandler.swift in Sources */,
