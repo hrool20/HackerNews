@@ -46,7 +46,7 @@ class SplashViewController: UIViewController {
 }
 extension SplashViewController: SplashViewControllerProtocol {
     func goToHitOptions() {
-        let navigationController = UINavigationController(rootViewController: Router.shared.getHitOptions())
+        let navigationController = PrincipalNavigationController(rootViewController: Router.shared.getHitOptions())
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.modalTransitionStyle = .crossDissolve
         present(navigationController, animated: true, completion: nil)

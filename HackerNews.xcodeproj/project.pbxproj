@@ -51,6 +51,8 @@
 		D12E6EDC25A6994A005605A1 /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EDB25A6994A005605A1 /* SplashViewControllerProtocol.swift */; };
 		D12E6EDE25A7CA75005605A1 /* UserDefaultsHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EDD25A7CA75005605A1 /* UserDefaultsHandlerProtocol.swift */; };
 		D12E6EE025A7CA84005605A1 /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EDF25A7CA84005605A1 /* UserDefaultsHandler.swift */; };
+		D12E6EE325A7EE84005605A1 /* PrincipalNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EE225A7EE84005605A1 /* PrincipalNavigationController.swift */; };
+		D12E6EE525A7F1D9005605A1 /* UIColor+PrincipalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EE425A7F1D9005605A1 /* UIColor+PrincipalColors.swift */; };
 		D16F6D1225A635FF00342863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1125A635FF00342863 /* AppDelegate.swift */; };
 		D16F6D1C25A635FF00342863 /* HackerNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1A25A635FF00342863 /* HackerNews.xcdatamodeld */; };
 		D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1D25A6360600342863 /* Assets.xcassets */; };
@@ -127,6 +129,8 @@
 		D12E6EDB25A6994A005605A1 /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
 		D12E6EDD25A7CA75005605A1 /* UserDefaultsHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandlerProtocol.swift; sourceTree = "<group>"; };
 		D12E6EDF25A7CA84005605A1 /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
+		D12E6EE225A7EE84005605A1 /* PrincipalNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalNavigationController.swift; sourceTree = "<group>"; };
+		D12E6EE425A7F1D9005605A1 /* UIColor+PrincipalColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+PrincipalColors.swift"; sourceTree = "<group>"; };
 		D16F6D0E25A635FF00342863 /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16F6D1125A635FF00342863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16F6D1B25A635FF00342863 /* HackerNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackerNews.xcdatamodel; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 		D12E6E7A25A646E1005605A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D12E6EE425A7F1D9005605A1 /* UIColor+PrincipalColors.swift */,
 				D12E6E7B25A6473A005605A1 /* UIColorExtension.swift */,
 				D12E6E8B25A64C76005605A1 /* UIResponderExtension.swift */,
 				D12E6E8925A64B3E005605A1 /* UIViewControllerExtension.swift */,
@@ -241,6 +246,7 @@
 		D12E6E8625A64982005605A1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D12E6EE125A7EDE8005605A1 /* NavigationController */,
 				D12E6E8725A64998005605A1 /* Constants.swift */,
 				D12E6ECD25A684E8005605A1 /* DateFormatterHandler.swift */,
 				D12E6E9925A66526005605A1 /* PopupHandlerProtocol.swift */,
@@ -340,6 +346,14 @@
 				D12E6ECB25A67E4C005605A1 /* Hit.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D12E6EE125A7EDE8005605A1 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				D12E6EE225A7EE84005605A1 /* PrincipalNavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		D16F6D0525A635FF00342863 = {
@@ -668,6 +682,7 @@
 				D12E6ECC25A67E4C005605A1 /* Hit.swift in Sources */,
 				D12E6EBF25A671AA005605A1 /* UIViewExtension.swift in Sources */,
 				D12E6E8425A64884005605A1 /* SplashViewController.swift in Sources */,
+				D12E6EE325A7EE84005605A1 /* PrincipalNavigationController.swift in Sources */,
 				D12E6ED625A69339005605A1 /* HitOptionsTableViewControllerProtocol.swift in Sources */,
 				D12E6EBC25A66F58005605A1 /* HitOptionTableViewCell.swift in Sources */,
 				D12E6ECE25A684E8005605A1 /* DateFormatterHandler.swift in Sources */,
@@ -677,6 +692,7 @@
 				D12E6ED825A6992D005605A1 /* SplashPresenterProtocol.swift in Sources */,
 				D12E6EDE25A7CA75005605A1 /* UserDefaultsHandlerProtocol.swift in Sources */,
 				D12E6ED025A692AA005605A1 /* HitOptionsPresenterProtocol.swift in Sources */,
+				D12E6EE525A7F1D9005605A1 /* UIColor+PrincipalColors.swift in Sources */,
 				D12E6EE025A7CA84005605A1 /* UserDefaultsHandler.swift in Sources */,
 				D12E6E8825A64998005605A1 /* Constants.swift in Sources */,
 				D12E6E9F25A666ED005605A1 /* Constants+Localizable.swift in Sources */,
