@@ -19,18 +19,55 @@ final class HitOptionsPresenter: HitOptionsPresenterProtocol {
         self.view = view
     }
     
+    func calculateDateDifference(date: Date?) -> String {
+        var result = "0s"
+        guard let date = date else {
+            return result
+        }
+        let now = Date()
+        let order = date.compare(now)
+        switch order {
+        case .orderedAscending:
+            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: date, to: now)
+            if let days = dateComponents.day, days != 0 {
+                result = "\(days)d"
+            }else if let hours = dateComponents.hour, hours != 0 {
+                result = "\(hours)h"
+            } else if let minutes = dateComponents.minute, minutes != 0 {
+                result = "\(minutes)m"
+            } else {
+                result = "\(dateComponents.second ?? 0)s"
+            }
+        default:
+            break
+        }
+        return result
+    }
+    
     func loadHits(orderedBy order: HitOrder) {
+        view.startLoader()
+        
         generalRepository.getHits(orderedBy: order, success: { [weak self] (hits) in
             guard let self = self else { return }
+            self.view.endLoader()
+            
             let deletedHits = self.userDefaultsHandler.array(from: Constants.Keys.DELETED_HIT_IDS) ?? []
             let newHits = hits.compactMap { (hit) -> Hit? in
                 guard !deletedHits.contains(hit.parentId) else { return nil }
                 return hit
             }
+            self.updateNavigationBar()
             self.view.updateHits(newHits)
         }) { [weak self] (error) in
+            self?.view.endLoader()
+            
             self?.view.showMessage(message: error.localizedDescription)
         }
+    }
+    
+    func removeDeletedHits() {
+        userDefaultsHandler.remove(from: Constants.Keys.DELETED_HIT_IDS)
+        userDefaultsHandler.remove(from: Constants.Keys.IS_SOME_HIT_DELETED)
     }
     
     func saveDeletedHit(hit: Hit) {
@@ -42,5 +79,12 @@ final class HitOptionsPresenter: HitOptionsPresenterProtocol {
         }
         deletedHits.append(hit.parentId)
         userDefaultsHandler.save(value: deletedHits, to: Constants.Keys.DELETED_HIT_IDS)
+        userDefaultsHandler.save(value: true, to: Constants.Keys.IS_SOME_HIT_DELETED)
+        updateNavigationBar()
+    }
+    
+    func updateNavigationBar() {
+        let shouldShowRightItems = userDefaultsHandler.bool(from: Constants.Keys.IS_SOME_HIT_DELETED)
+        view.updateNavigationBar(shouldShowRightItems)
     }
 }

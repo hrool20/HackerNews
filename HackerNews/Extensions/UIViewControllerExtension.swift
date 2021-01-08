@@ -13,7 +13,7 @@ extension UIViewController: PopupHandlerProtocol {
         return Self(nibName: NIBName, bundle: bundle)
     }
     
-    // MARK: PopupHandlerProtocol
+    // MARK: - PopupHandlerProtocol
     
     func showMessage(title: String?, message: String, closure: @escaping (() -> Void)) {
         let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: .alert)
@@ -21,6 +21,20 @@ extension UIViewController: PopupHandlerProtocol {
             closure()
         }
         alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showQuestion(title: String, message: String, yes yesTitle: String?, no noTitle: String?, closure: @escaping ((Bool) -> Void)) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: yesTitle ?? Constants.Localizable.YES, style: .destructive) { (_) in
+            closure(true)
+        }
+        let noAction = UIAlertAction(title: noTitle ?? Constants.Localizable.NO, style: .default) { (_) in
+            closure(false)
+        }
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        alertController.preferredAction = noAction
         present(alertController, animated: true, completion: nil)
     }
 }

@@ -17,27 +17,31 @@ class HitOptionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        order = .ascendant
+        order = .descendant
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(didRefreshTableView), for: .valueChanged)
         tableView.refreshControl = refreshControl
         
         tableView.register(HitOptionTableViewCell.getNIB(), forCellReuseIdentifier: HitOptionTableViewCell.reuseIdentifier)
-
+        
         hitsPresenter.loadHits(orderedBy: order)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.setNavigationBarHidden(false, animated: true)
+    @objc private func showOptions() {
+        let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: nil, preferredStyle: .actionSheet)
+        let restartAction = UIAlertAction(title: Constants.Localizable.RESTORE_NEWS, style: .default) { [weak self] (_) in
+            self?.showQuestion(title: "", message: Constants.Localizable.RESTORE_NEWS_QUESTION, closure: { (isSuccessful) in
+                guard let self = self else { return }
+                guard isSuccessful else { return }
+                self.hitsPresenter.removeDeletedHits()
+                self.hitsPresenter.loadHits(orderedBy: self.order)
+            })
+        }
+        let cancelAction = UIAlertAction(title: Constants.Localizable.CANCEL, style: .cancel, handler: nil)
+        alertController.addAction(restartAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     @objc private func didRefreshTableView() {
@@ -66,11 +70,11 @@ class HitOptionsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HitOptionTableViewCell.reuseIdentifier, for: indexPath) as! HitOptionTableViewCell
-        guard let hit = hits?[indexPath.row], let createdAt = hit.createdAt else {
+        guard let hit = hits?[indexPath.row] else {
             return cell
         }
         let title = hit.title ?? hit.storyTitle ?? ""
-        let description = "\(hit.author) - \(DateFormatterHandler.shared.string(from: createdAt, withFormat: "dd/MM/yyyy hh:mm:ss"))"
+        let description = "\(hit.author) - \(hitsPresenter.calculateDateDifference(date: hit.createdAt))"
         cell.option = (title, description)
         return cell
     }
@@ -111,6 +115,13 @@ class HitOptionsTableViewController: UITableViewController {
 
 }
 extension HitOptionsTableViewController: HitOptionsTableViewControllerProtocol {
+    func updateNavigationBar(_ shouldShowRightItems: Bool) {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "ic_app_logo.png").resizeImage(targetSize: CGSize(width: 35.0, height: 35.0)))
+        navigationItem.titleView = imageView
+        let barButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_gear.png").resizeImage(targetSize: CGSize(width: 30.0, height: 30.0)), style: .plain, target: self, action: #selector(showOptions))
+        navigationItem.rightBarButtonItems = (shouldShowRightItems) ? [barButton] : []
+    }
+    
     func updateHits(_ hits: [Hit]) {
         self.hits = hits
         tableView.refreshControl?.endRefreshing()

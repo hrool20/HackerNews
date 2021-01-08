@@ -6,5 +6,12 @@
   Copyright © 2021 Hugo Rosado. All rights reserved.
 */
 "Hacker News" = "Noticias Hacker";
-"Ok" = "Ok";
+"Cancel" = "Cancelar";
 "There was a problem, please try later" = "Hubo un problema. Inténtelo más tarde";
+"Loading..." = "Cargando...";
+"Ok" = "Ok";
+"No" = "No";
+"Restart news" = "Restaurar noticias";
+"Are you sure to restore thes news?" = "¿Estás seguro de querer restaurar las noticias?";
+"Yes" = "Sí";
+

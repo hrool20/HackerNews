@@ -9,6 +9,9 @@
 import UIKit
 
 protocol HitOptionsPresenterProtocol {
+    func calculateDateDifference(date: Date?) -> String
     func loadHits(orderedBy order: HitOrder)
+    func removeDeletedHits()
     func saveDeletedHit(hit: Hit)
+    func updateNavigationBar()
 }
