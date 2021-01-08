@@ -6,5 +6,11 @@
   Copyright © 2021 Hugo Rosado. All rights reserved.
 */
 "Hacker News" = "Hacker News";
-"Ok" = "Ok";
+"Cancel" = "Cancel";
 "There was a problem, please try later" = "There was a problem, please try later";
+"Loading..." = "Loading...";
+"Ok" = "Ok";
+"No" = "No";
+"Restart news" = "Restart news";
+"Are you sure to restore thes news?" = "Are you sure to restore thes news?";
+"Yes" = "Yes";
