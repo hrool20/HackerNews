@@ -283,8 +283,8 @@
 		D12E6E9B25A666AA005605A1 /* Internationalization */ = {
 			isa = PBXGroup;
 			children = (
-				D12E6EA225A66AB0005605A1 /* Localizable.strings */,
 				D12E6E9E25A666ED005605A1 /* Constants+Localizable.swift */,
+				D12E6EA225A66AB0005605A1 /* Localizable.strings */,
 			);
 			path = Internationalization;
 			sourceTree = "<group>";
@@ -328,8 +328,8 @@
 		D12E6EC325A67444005605A1 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				D12E6EC425A67459005605A1 /* ResponseHelper.swift */,
 				D12E6EC825A676E2005605A1 /* Constants+Endpoints.swift */,
+				D12E6EC425A67459005605A1 /* ResponseHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
