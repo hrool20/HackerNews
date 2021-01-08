@@ -21,8 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootViewController = Router.shared.getSplashScene()
-        let navigationController = UINavigationController(rootViewController: rootViewController)
-        window?.rootViewController = navigationController
+        window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
         
         return true

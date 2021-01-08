@@ -10,6 +10,7 @@ import Foundation
 
 struct Constants {
     struct Keys {
+        static let DELETED_HIT_IDS: String = "deletedHitIds"
         static let USER: String = "user"
     }
 }
