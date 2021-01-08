@@ -20,8 +20,12 @@ final class HitOptionsPresenter: HitOptionsPresenterProtocol {
     }
     
     func loadHits(orderedBy order: HitOrder) {
+        view.startLoader()
+        
         generalRepository.getHits(orderedBy: order, success: { [weak self] (hits) in
             guard let self = self else { return }
+            self.view.endLoader()
+            
             let deletedHits = self.userDefaultsHandler.array(from: Constants.Keys.DELETED_HIT_IDS) ?? []
             let newHits = hits.compactMap { (hit) -> Hit? in
                 guard !deletedHits.contains(hit.parentId) else { return nil }
@@ -30,6 +34,8 @@ final class HitOptionsPresenter: HitOptionsPresenterProtocol {
             self.updateNavigationBar()
             self.view.updateHits(newHits)
         }) { [weak self] (error) in
+            self?.view.endLoader()
+            
             self?.view.showMessage(message: error.localizedDescription)
         }
     }

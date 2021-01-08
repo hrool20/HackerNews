@@ -7,6 +7,7 @@ target 'HackerNews' do
 
   pod 'Alamofire', '5.2.2'
   pod 'IQKeyboardManagerSwift', '6.5.6'
+  pod 'lottie-ios', '3.1.9'
   pod 'SDWebImage', '5.10.2'
   pod 'SwiftyJSON', '5.0.0'
 

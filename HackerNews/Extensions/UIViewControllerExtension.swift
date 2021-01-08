@@ -13,7 +13,7 @@ extension UIViewController: PopupHandlerProtocol {
         return Self(nibName: NIBName, bundle: bundle)
     }
     
-    // MARK: PopupHandlerProtocol
+    // MARK: - PopupHandlerProtocol
     
     func showMessage(title: String?, message: String, closure: @escaping (() -> Void)) {
         let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: .alert)

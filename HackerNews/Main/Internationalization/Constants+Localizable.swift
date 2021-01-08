@@ -13,6 +13,7 @@ extension Constants {
         static let APP_NAME = NSLocalizedString("Hacker News", comment: "")
         static let CANCEL = NSLocalizedString("Cancel", comment: "")
         static let DEFAULT_ERROR_MESSAGE = NSLocalizedString("There was a problem, please try later", comment: "")
+        static let DEFAULT_LOADER = NSLocalizedString("Loading...", comment: "")
         static let OK = NSLocalizedString("Ok", comment: "")
         static let NO: String = NSLocalizedString("No", comment: "")
         static let RESTORE_NEWS = NSLocalizedString("Restart news", comment: "")

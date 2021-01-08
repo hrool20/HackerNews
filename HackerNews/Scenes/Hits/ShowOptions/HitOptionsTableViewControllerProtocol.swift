@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HitOptionsTableViewControllerProtocol: PopupHandlerProtocol {
+protocol HitOptionsTableViewControllerProtocol: LoaderHandlerProtocol, PopupHandlerProtocol {
     func updateNavigationBar(_ shouldShowRightItems: Bool)
     func updateHits(_ hits: [Hit])
 }
