@@ -19,6 +19,31 @@ final class HitOptionsPresenter: HitOptionsPresenterProtocol {
         self.view = view
     }
     
+    func calculateDateDifference(date: Date?) -> String {
+        var result = "0s"
+        guard let date = date else {
+            return result
+        }
+        let now = Date()
+        let order = date.compare(now)
+        switch order {
+        case .orderedAscending:
+            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: date, to: now)
+            if let days = dateComponents.day, days != 0 {
+                result = "\(days)d"
+            }else if let hours = dateComponents.hour, hours != 0 {
+                result = "\(hours)h"
+            } else if let minutes = dateComponents.minute, minutes != 0 {
+                result = "\(minutes)m"
+            } else {
+                result = "\(dateComponents.second ?? 0)s"
+            }
+        default:
+            break
+        }
+        return result
+    }
+    
     func loadHits(orderedBy order: HitOrder) {
         view.startLoader()
         
@@ -43,7 +68,6 @@ final class HitOptionsPresenter: HitOptionsPresenterProtocol {
     func removeDeletedHits() {
         userDefaultsHandler.remove(from: Constants.Keys.DELETED_HIT_IDS)
         userDefaultsHandler.remove(from: Constants.Keys.IS_SOME_HIT_DELETED)
-        updateNavigationBar()
     }
     
     func saveDeletedHit(hit: Hit) {
