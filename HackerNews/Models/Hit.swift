@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class Hit {
+class Hit: Equatable {
     var parentId: String
     var objectId: String
     var title: String?
@@ -36,6 +36,10 @@ class Hit {
         self.createdAt = DateFormatterHandler.shared.date(from: createdAt, withFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ")
         self.comment = comment
         self.tags = tags
+    }
+    
+    static func == (lhs: Hit, rhs: Hit) -> Bool {
+        return lhs.parentId == rhs.parentId
     }
     
 }
