@@ -122,6 +122,10 @@ class HitOptionsTableViewController: UITableViewController {
 
 }
 extension HitOptionsTableViewController: HitOptionsTableViewControllerProtocol {
+    func endRefreshControl() {
+        tableView.refreshControl?.endRefreshing()
+    }
+    
     func updateNavigationBar(_ shouldShowRightItems: Bool) {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "ic_app_logo.png").resizeImage(targetSize: CGSize(width: 35.0, height: 35.0)))
         navigationItem.titleView = imageView
@@ -132,7 +136,7 @@ extension HitOptionsTableViewController: HitOptionsTableViewControllerProtocol {
     
     func updateHits(_ hits: [Hit]) {
         self.hits = hits
-        tableView.refreshControl?.endRefreshing()
+        endRefreshControl()
         tableView.reloadData()
     }
 }

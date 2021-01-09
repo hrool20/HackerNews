@@ -33,6 +33,7 @@ class LottieRefreshControl: UIRefreshControl {
         ])
         
         tintColor = .clear
+        addTarget(self, action: #selector(beginRefreshing), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
