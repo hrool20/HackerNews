@@ -69,6 +69,7 @@
 		D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1D25A6360600342863 /* Assets.xcassets */; };
 		D16F6D2125A6360600342863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1F25A6360600342863 /* LaunchScreen.storyboard */; };
 		D1C4018125A94F800030D63A /* XCUIElementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C4018025A94F800030D63A /* XCUIElementExtension.swift */; };
+		D1C4018425AA10420030D63A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D1C4018325AA10420030D63A /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		D16F6D3225A6360700342863 /* HackerNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16F6D3825A6360700342863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C4018025A94F800030D63A /* XCUIElementExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUIElementExtension.swift; sourceTree = "<group>"; };
+		D1C4018325AA10420030D63A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E24F7F0FBA65C37C5FB64525 /* Pods_HackerNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackerNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -439,6 +441,7 @@
 				D16F6D0F25A635FF00342863 /* Products */,
 				2E0A73A4AB13D180FC970BD6 /* Pods */,
 				F7EBBEEA70A94B16E0C2EBD4 /* Frameworks */,
+				D1C4018325AA10420030D63A /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -617,6 +620,7 @@
 				D12E6EB525A66D6F005605A1 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				D12E6EEF25A8DAD6005605A1 /* LoaderView.xib in Resources */,
 				D12E6EB425A66D6F005605A1 /* OpenSans-Bold.ttf in Resources */,
+				D1C4018425AA10420030D63A /* README.md in Resources */,
 				D16F6D2125A6360600342863 /* LaunchScreen.storyboard in Resources */,
 				D12E6EA025A66AB0005605A1 /* Localizable.strings in Resources */,
 				D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */,
