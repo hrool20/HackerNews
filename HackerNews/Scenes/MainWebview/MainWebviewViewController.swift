@@ -20,7 +20,7 @@ class MainWebviewViewController: UIViewController {
 
         navigationItem.title = navigationTitle
         
-        // TODO: Start progress
+        startLoader()
         
         webView.navigationDelegate = self
         webView.uiDelegate = self
@@ -29,7 +29,7 @@ class MainWebviewViewController: UIViewController {
             webView.load(URLRequest(url: url))
         } else {
             showMessage(message: Constants.Localizable.DEFAULT_ERROR_MESSAGE) { [weak self] in
-                // TODO: End progress
+                self?.endLoader()
                 self?.closeWebView()
             }
         }
@@ -75,11 +75,14 @@ extension MainWebviewViewController: WKUIDelegate {
 }
 extension MainWebviewViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // TODO: End progress
+        endLoader()
+        navigationItem.title = navigationTitle ?? webView.title
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        // TODO: End progress
-        showMessage(message: error.localizedDescription)
+        endLoader()
+        showMessage(message: error.localizedDescription) { [weak self] in
+            self?.closeWebView()
+        }
     }
 }

@@ -10,10 +10,26 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    var splashPresenter: SplashPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        titleLabel.text = Constants.Localizable.APP_NAME
+        splashPresenter.startAnimation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
 
@@ -27,4 +43,11 @@ class SplashViewController: UIViewController {
     }
     */
 
+}
+extension SplashViewController: SplashViewControllerProtocol {
+    func goToHitOptions() {
+        let navigationController = PrincipalNavigationController(rootViewController: Router.shared.getHitOptions())
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+    }
 }

@@ -5,5 +5,12 @@
   Created by Hugo Rosado on 1/6/21.
   Copyright © 2021 Hugo Rosado. All rights reserved.
 */
-"Ok" = "Ok";
+"Hacker News" = "Hacker News";
+"Cancel" = "Cancel";
 "There was a problem, please try later" = "There was a problem, please try later";
+"Loading..." = "Loading...";
+"Ok" = "Ok";
+"No" = "No";
+"Restart news" = "Restart news";
+"Are you sure to restore thes news?" = "Are you sure to restore thes news?";
+"Yes" = "Yes";
