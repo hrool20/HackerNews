@@ -66,7 +66,7 @@ final class HitOptionsPresenter: HitOptionsPresenterProtocol {
             if !isAnUpdate {
                 self?.view.endLoader()
             }
-            
+            self?.view.endRefreshControl()
             self?.view.showMessage(message: error.localizedDescription)
         }
     }

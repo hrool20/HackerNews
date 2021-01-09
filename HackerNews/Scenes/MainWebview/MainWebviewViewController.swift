@@ -26,7 +26,9 @@ class MainWebviewViewController: UIViewController {
         webView.uiDelegate = self
         webView.allowsBackForwardNavigationGestures = true
         if let url = URL(string: url) {
-            webView.load(URLRequest(url: url))
+            var request = URLRequest(url: url)
+            request.timeoutInterval = 20.0
+            webView.load(request)
         } else {
             showMessage(message: Constants.Localizable.DEFAULT_ERROR_MESSAGE) { [weak self] in
                 self?.endLoader()
@@ -40,6 +42,13 @@ class MainWebviewViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         } else {
             dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func showError(error: String) {
+        endLoader()
+        showMessage(message: error) { [weak self] in
+            self?.closeWebView()
         }
     }
 
@@ -80,9 +89,10 @@ extension MainWebviewViewController: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        endLoader()
-        showMessage(message: error.localizedDescription) { [weak self] in
-            self?.closeWebView()
-        }
+        showError(error: error.localizedDescription)
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        showError(error: error.localizedDescription)
     }
 }
