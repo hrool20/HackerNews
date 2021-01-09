@@ -1,6 +1,6 @@
 <h1 align="center">
   <br/>
-  <img src="https://raw.githubusercontent.com/hrool20/HackerNews/develop/HackerNews/Main/Assets.xcassets/ic_app_logo.imageset/ic_app_logo.png" alt="Markdownify" width="200">
+  <img src="https://raw.githubusercontent.com/hrool20/HackerNews/master/HackerNews/Main/Assets.xcassets/ic_app_logo.imageset/ic_app_logo.png" alt="Markdownify" width="200">
   <br/>
   Hacker News
   <br/>
