@@ -59,6 +59,7 @@
 		D12E6EF325A8DFC0005605A1 /* LoaderHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EF225A8DFC0005605A1 /* LoaderHandlerProtocol.swift */; };
 		D12E6EF725A9066B005605A1 /* BlueLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EF625A9066B005605A1 /* BlueLoader.json */; };
 		D12E6EFA25A91B2A005605A1 /* LottieRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6EF925A91B2A005605A1 /* LottieRefreshControl.swift */; };
+		D12E6EFC25A92A8F005605A1 /* BlueLoaderDark.json in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EFB25A92A8E005605A1 /* BlueLoaderDark.json */; };
 		D16F6D1225A635FF00342863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1125A635FF00342863 /* AppDelegate.swift */; };
 		D16F6D1C25A635FF00342863 /* HackerNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1A25A635FF00342863 /* HackerNews.xcdatamodeld */; };
 		D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1D25A6360600342863 /* Assets.xcassets */; };
@@ -143,6 +144,7 @@
 		D12E6EF225A8DFC0005605A1 /* LoaderHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderHandlerProtocol.swift; sourceTree = "<group>"; };
 		D12E6EF625A9066B005605A1 /* BlueLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BlueLoader.json; sourceTree = "<group>"; };
 		D12E6EF925A91B2A005605A1 /* LottieRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieRefreshControl.swift; sourceTree = "<group>"; };
+		D12E6EFB25A92A8E005605A1 /* BlueLoaderDark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BlueLoaderDark.json; sourceTree = "<group>"; };
 		D16F6D0E25A635FF00342863 /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16F6D1125A635FF00342863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16F6D1B25A635FF00342863 /* HackerNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackerNews.xcdatamodel; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				D12E6EF825A91AF9005605A1 /* RefreshControls */,
 				D12E6EED25A8DAB8005605A1 /* Views */,
 				D12E6EF625A9066B005605A1 /* BlueLoader.json */,
+				D12E6EFB25A92A8E005605A1 /* BlueLoaderDark.json */,
 				D12E6E8725A64998005605A1 /* Constants.swift */,
 				D12E6ECD25A684E8005605A1 /* DateFormatterHandler.swift */,
 				D12E6EF225A8DFC0005605A1 /* LoaderHandlerProtocol.swift */,
@@ -580,6 +583,7 @@
 				D12E6EB925A66D6F005605A1 /* OpenSans-ExtraBold.ttf in Resources */,
 				D12E6E9825A659DD005605A1 /* MainWebviewViewController.xib in Resources */,
 				D12E6EB625A66D6F005605A1 /* OpenSans-Regular.ttf in Resources */,
+				D12E6EFC25A92A8F005605A1 /* BlueLoaderDark.json in Resources */,
 				D12E6EB025A66D6F005605A1 /* OpenSans-Italic.ttf in Resources */,
 				D12E6EB825A66D6F005605A1 /* OpenSans-LightItalic.ttf in Resources */,
 				D12E6EBD25A66F58005605A1 /* HitOptionTableViewCell.xib in Resources */,
