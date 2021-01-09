@@ -24,6 +24,7 @@ class HitOptionsTableViewController: UITableViewController {
         lottieRefreshControl.addTarget(self, action: #selector(didRefreshTableView), for: .valueChanged)
         tableView.refreshControl = lottieRefreshControl
         
+        tableView.accessibilityIdentifier = Constants.UITest.HitOptions.HIT_TABLE_VIEW
         tableView.register(HitOptionTableViewCell.getNIB(), forCellReuseIdentifier: HitOptionTableViewCell.reuseIdentifier)
         
         hitsPresenter.loadHits(orderedBy: order, isAnUpdate: false)
@@ -35,7 +36,7 @@ class HitOptionsTableViewController: UITableViewController {
     
     @objc private func showOptions() {
         let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: nil, preferredStyle: .actionSheet)
-        let restartAction = UIAlertAction(title: Constants.Localizable.RESTORE_NEWS, style: .default) { [weak self] (_) in
+        let restoreAction = UIAlertAction(title: Constants.Localizable.RESTORE_NEWS, style: .default) { [weak self] (_) in
             self?.showQuestion(title: "", message: Constants.Localizable.RESTORE_NEWS_QUESTION, closure: { (isSuccessful) in
                 guard let self = self else { return }
                 guard isSuccessful else { return }
@@ -43,8 +44,9 @@ class HitOptionsTableViewController: UITableViewController {
                 self.hitsPresenter.loadHits(orderedBy: self.order, isAnUpdate: false)
             })
         }
+        restoreAction.accessibilityLabel = Constants.UITest.HitOptions.RESTORE_ACTION
         let cancelAction = UIAlertAction(title: Constants.Localizable.CANCEL, style: .cancel, handler: nil)
-        alertController.addAction(restartAction)
+        alertController.addAction(restoreAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }
@@ -124,6 +126,7 @@ extension HitOptionsTableViewController: HitOptionsTableViewControllerProtocol {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "ic_app_logo.png").resizeImage(targetSize: CGSize(width: 35.0, height: 35.0)))
         navigationItem.titleView = imageView
         let barButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_gear.png").resizeImage(targetSize: CGSize(width: 30.0, height: 30.0)), style: .plain, target: self, action: #selector(showOptions))
+        barButton.accessibilityIdentifier = Constants.UITest.HitOptions.SETTING_BAR_BUTTON
         navigationItem.rightBarButtonItems = (shouldShowRightItems) ? [barButton] : []
     }
     
