@@ -44,11 +44,13 @@ class LoaderView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        firstView.backgroundColor = .loaderBackgroundColor
+        messageLabel.textColor = .textColor
         firstView.layer.cornerRadius = firstView.bounds.width / 20
     }
     
     private func start(message: String) {
-        lottieView = AnimationView(name: "BlueLoader")
+        lottieView = AnimationView(name: (traitCollection.userInterfaceStyle == .dark) ? "BlueLoaderDark" : "BlueLoader")
         lottieView.translatesAutoresizingMaskIntoConstraints = false
         lottieView.loopMode = .loop
         lottieView.animationSpeed = CGFloat(animationDuration)

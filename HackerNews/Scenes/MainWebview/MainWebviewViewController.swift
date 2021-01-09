@@ -76,10 +76,13 @@ extension MainWebviewViewController: WKUIDelegate {
 extension MainWebviewViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         endLoader()
+        navigationItem.title = navigationTitle ?? webView.title
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         endLoader()
-        showMessage(message: error.localizedDescription)
+        showMessage(message: error.localizedDescription) { [weak self] in
+            self?.closeWebView()
+        }
     }
 }
