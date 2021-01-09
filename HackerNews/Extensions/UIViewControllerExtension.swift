@@ -29,9 +29,11 @@ extension UIViewController: PopupHandlerProtocol {
         let yesAction = UIAlertAction(title: yesTitle ?? Constants.Localizable.YES, style: .destructive) { (_) in
             closure(true)
         }
+        yesAction.accessibilityLabel = Constants.UITest.General.YES_ACTION
         let noAction = UIAlertAction(title: noTitle ?? Constants.Localizable.NO, style: .default) { (_) in
             closure(false)
         }
+        noAction.accessibilityLabel = Constants.UITest.General.NO_ACTION
         alertController.addAction(yesAction)
         alertController.addAction(noAction)
         alertController.preferredAction = noAction

@@ -62,11 +62,13 @@
 		D12E6EFC25A92A8F005605A1 /* BlueLoaderDark.json in Resources */ = {isa = PBXBuildFile; fileRef = D12E6EFB25A92A8E005605A1 /* BlueLoaderDark.json */; };
 		D12E6F0225A9325A005605A1 /* RouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6F0125A9325A005605A1 /* RouterMock.swift */; };
 		D12E6F0525A9335E005605A1 /* GeneralRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6F0425A9335E005605A1 /* GeneralRepositoryTests.swift */; };
+		D12E6F0A25A94178005605A1 /* HitOptionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6F0925A94178005605A1 /* HitOptionsUITests.swift */; };
+		D12E6F0B25A94A32005605A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E6E8725A64998005605A1 /* Constants.swift */; };
 		D16F6D1225A635FF00342863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1125A635FF00342863 /* AppDelegate.swift */; };
 		D16F6D1C25A635FF00342863 /* HackerNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D1A25A635FF00342863 /* HackerNews.xcdatamodeld */; };
 		D16F6D1E25A6360600342863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1D25A6360600342863 /* Assets.xcassets */; };
 		D16F6D2125A6360600342863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16F6D1F25A6360600342863 /* LaunchScreen.storyboard */; };
-		D16F6D3725A6360700342863 /* HackerNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F6D3625A6360700342863 /* HackerNewsUITests.swift */; };
+		D1C4018125A94F800030D63A /* XCUIElementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C4018025A94F800030D63A /* XCUIElementExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +150,7 @@
 		D12E6EFB25A92A8E005605A1 /* BlueLoaderDark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BlueLoaderDark.json; sourceTree = "<group>"; };
 		D12E6F0125A9325A005605A1 /* RouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMock.swift; sourceTree = "<group>"; };
 		D12E6F0425A9335E005605A1 /* GeneralRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRepositoryTests.swift; sourceTree = "<group>"; };
+		D12E6F0925A94178005605A1 /* HitOptionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitOptionsUITests.swift; sourceTree = "<group>"; };
 		D16F6D0E25A635FF00342863 /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16F6D1125A635FF00342863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16F6D1B25A635FF00342863 /* HackerNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackerNews.xcdatamodel; sourceTree = "<group>"; };
@@ -157,8 +160,8 @@
 		D16F6D2725A6360700342863 /* HackerNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16F6D2D25A6360700342863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D16F6D3225A6360700342863 /* HackerNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D16F6D3625A6360700342863 /* HackerNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsUITests.swift; sourceTree = "<group>"; };
 		D16F6D3825A6360700342863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1C4018025A94F800030D63A /* XCUIElementExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUIElementExtension.swift; sourceTree = "<group>"; };
 		E24F7F0FBA65C37C5FB64525 /* Pods_HackerNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackerNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -403,6 +406,30 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		D12E6F0625A940E7005605A1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D12E6F0725A9412A005605A1 /* Hits */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D12E6F0725A9412A005605A1 /* Hits */ = {
+			isa = PBXGroup;
+			children = (
+				D12E6F0825A94157005605A1 /* ShowOptions */,
+			);
+			path = Hits;
+			sourceTree = "<group>";
+		};
+		D12E6F0825A94157005605A1 /* ShowOptions */ = {
+			isa = PBXGroup;
+			children = (
+				D12E6F0925A94178005605A1 /* HitOptionsUITests.swift */,
+			);
+			path = ShowOptions;
+			sourceTree = "<group>";
+		};
 		D16F6D0525A635FF00342863 = {
 			isa = PBXGroup;
 			children = (
@@ -452,10 +479,19 @@
 		D16F6D3525A6360700342863 /* HackerNewsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D16F6D3625A6360700342863 /* HackerNewsUITests.swift */,
+				D1C4017F25A94F610030D63A /* Extensions */,
+				D12E6F0625A940E7005605A1 /* Scenes */,
 				D16F6D3825A6360700342863 /* Info.plist */,
 			);
 			path = HackerNewsUITests;
+			sourceTree = "<group>";
+		};
+		D1C4017F25A94F610030D63A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D1C4018025A94F800030D63A /* XCUIElementExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F7EBBEEA70A94B16E0C2EBD4 /* Frameworks */ = {
@@ -775,7 +811,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D16F6D3725A6360700342863 /* HackerNewsUITests.swift in Sources */,
+				D12E6F0A25A94178005605A1 /* HitOptionsUITests.swift in Sources */,
+				D1C4018125A94F800030D63A /* XCUIElementExtension.swift in Sources */,
+				D12E6F0B25A94A32005605A1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

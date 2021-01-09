@@ -24,6 +24,7 @@ class LoaderView: UIView {
         super.init(frame: UIScreen.main.bounds)
         
         self.animationDuration = animationDuration
+        accessibilityIdentifier = Constants.UITest.LoaderView.IDENTIFIER
         loadNIB()
         
         start(message: message)
