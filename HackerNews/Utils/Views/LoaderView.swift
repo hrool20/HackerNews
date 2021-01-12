@@ -18,12 +18,14 @@ class LoaderView: UIView {
     @IBOutlet weak var messageLabel: UILabel!
     private var lottieView: AnimationView!
     private var animationDuration: TimeInterval!
+    private var lastUserInterfaceStyle: UIUserInterfaceStyle!
     static var isVisible: Bool = false
     
     init(message: String, animationDuration: TimeInterval? = 1.0) {
         super.init(frame: UIScreen.main.bounds)
         
         self.animationDuration = animationDuration
+        lastUserInterfaceStyle = traitCollection.userInterfaceStyle
         accessibilityIdentifier = Constants.UITest.LoaderView.IDENTIFIER
         loadNIB()
         
@@ -48,6 +50,15 @@ class LoaderView: UIView {
         firstView.backgroundColor = .loaderBackgroundColor
         messageLabel.textColor = .textColor
         firstView.layer.cornerRadius = firstView.bounds.width / 20
+        
+        guard traitCollection.userInterfaceStyle != .unspecified && lastUserInterfaceStyle != traitCollection.userInterfaceStyle else {
+            return
+        }
+        lastUserInterfaceStyle = traitCollection.userInterfaceStyle
+        let animation = Animation.named((traitCollection.userInterfaceStyle == .dark) ? "BlueLoaderDark" : "BlueLoader")
+        lottieView.stop()
+        lottieView.animation = animation
+        lottieView.play()
     }
     
     private func start(message: String) {
@@ -88,9 +99,21 @@ class LoaderView: UIView {
         }
     }
     
-    func hide() {
-        removeFromSuperview()
+    func hide(force: Bool) {
         LoaderView.isVisible = false
+        guard !force else {
+            removeFromSuperview()
+            return
+        }
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.firstView.transform = CGAffineTransform(scaleX: 0, y: 0)
+        }
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            self?.alpha = 0.0
+            self?.layoutIfNeeded()
+        }) { [weak self] (_) in
+            self?.removeFromSuperview()
+        }
     }
     
     private func loadNIB() {
