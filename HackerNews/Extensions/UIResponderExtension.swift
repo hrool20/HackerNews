@@ -21,19 +21,22 @@ extension UIResponder: LoaderHandlerProtocol {
     
     func endLoader() {
         let loaderView = findLoader()
-        loaderView?.hide()
+        loaderView?.hide(force: false)
     }
     
     func startLoader(message: String) {
-        if LoaderView.isVisible, let loaderView = findLoader() {
-            loaderView.loadViews(message: message, animation: true)
-        } else {
-            let window = UIApplication.shared.keyWindow
-            let loaderView = LoaderView(message: message)
-            DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            let oldLoaderView = self.findLoader()
+            guard self.isLoaderVisible, let loaderView = oldLoaderView else {
+                oldLoaderView?.hide(force: true)
+                let window = UIApplication.shared.keyWindow
+                let loaderView = LoaderView(message: message)
                 window?.addSubview(loaderView)
                 window?.bringSubviewToFront(loaderView)
+                return
             }
+            loaderView.loadViews(message: message, animation: true)
         }
     }
     
