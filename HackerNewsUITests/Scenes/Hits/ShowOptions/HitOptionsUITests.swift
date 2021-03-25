@@ -38,8 +38,8 @@ class HitOptionsUITests: XCTestCase {
         firstCell.swipeLeft()
         
         let oldCount = hitTableView.cells.count
-        let deleteEditAction = hitTableView.buttons["trailing0"]
-        XCTAssertTrue(deleteEditAction.exists)
+        let deleteEditAction = firstCell.buttons.firstMatch
+        XCTAssertTrue(deleteEditAction.waitForExistence(timeout: timeout))
         deleteEditAction.tap()
         
         let newCount = hitTableView.cells.count
@@ -62,7 +62,7 @@ class HitOptionsUITests: XCTestCase {
         sheet.tap()
         
         let yesAction = app.alerts.firstMatch.buttons[Constants.UITest.General.YES_ACTION]
-        XCTAssertTrue(yesAction.exists)
+        XCTAssertTrue(yesAction.waitForExistence(timeout: timeout))
         yesAction.tap()
         
         let oldCount = hitTableView.cells.count
